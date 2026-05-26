@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[a4paper, total={6in, 8.75in}]{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{caption}
+\usepackage{xcolor}
+\usepackage{todonotes}
+\usepackage{changepage}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm} 
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{bbm}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage[backend=biber,style=ieee]{biblatex}
+\addbibresource{reference.bib} 
+
+\setlength\parindent{0pt}
+
+\setlength{\textfloatsep}{0.1\baselineskip} % Space between floats and main text
+\setlength{\floatsep}{0.1\baselineskip}     % Space between consecutive floats
+
+\titlespacing{\subsubsection}{0pt}{1ex}{0ex}
+\titlespacing{\subsection}{0pt}{1ex}{0.5ex}
+\titlespacing{\section}{0pt}{1.5ex}{1ex}
+
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries}
+
+%%%% define theorems
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{rmk}{Remark}
+\newtheorem{assum}{Assumptions}
+
+\title{Evolution of nonlinear reduced-order solutions for PDEs with conserved quantities
+\\ \vspace{1em} \large Project Report for NAML}
+\author{Maria Teresa Cazzola}
+\date{May 2026}
+
+\begin{document}
+
+% \large
+
+\maketitle
+
+\begin{abstract}
+    
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\label{section:intro}
+\section{Introduction}
+\input{ch/intro}
+
+\label{section:setup}
+\section{Preliminaries and problem setup}
+% \input{intro}
+
+\label{section:methodology}
+\section{Evolution of reduced order model solutions}
+\input{ch/methods.tex}
+
+\label{section:results}
+\section{Numerical results} 
+% \input{}
+
+\label{section:conclusions}
+\section{Conclusions}
+% \input{}
+
+
+\printbibliography
+
+\end{document}
