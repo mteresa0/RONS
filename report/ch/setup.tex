@@ -1,0 +1,41 @@
+\subsection{Evolution of reduced-order solutions without conserved quantities}
+
+Consider the map:
+\begin{equation}
+    \begin{aligned}
+        u: D\times \mathbb{R}^+ & \rightarrow \mathbb{R}^p \\
+        (\mathbf{x}, t) & \mapsto u(\mathbf{x}, t)
+    \end{aligned}
+\end{equation}
+where $D \subset \mathbb{R}^k$ is the spatial domain. 
+For simplicity, the following work is restricted to the case $p=1$.
+This map is governed by a PDE of the form:
+\begin{equation}
+    \begin{aligned}
+        \label{eq:pde}
+        & \pd{u}{t} = F(u) & \text{ in } D\times \mathbb{R}^+  , \\
+        & u(\mathbf{x}, 0) = u_0(\mathbf{x}),  & \text{ in } D,
+    \end{aligned}
+\end{equation}
+where $F$ is a potentially nonlinear differential operator and $u_0$ is the initial data.
+
+
+\begin{defs}[Ansatz Manifold]
+    The Ansatz Manifold is defined as 
+    \begin{equation}
+        \mathcal{M} = \{ u \in H : \exists \mathbf{q} \in \Omega \text{ with } u = \hat{u}(\dot, \mathbf{q})  \} \subset H
+    \end{equation}
+    which is the image of \autoref{eq:ansatz}.
+\end{defs}
+
+\begin{assum}
+    Assume that the map $\hat{u}: \Omega \rightarrow H$ has the following properties:
+    \begin{enumerate}
+        \item injective;
+        \item l-differentiable;
+        \item $\hat{u}$ is an immersion.
+    \end{enumerate}
+\end{assum}
+\label{assum1}
+
+\subsection{Evolution of reduced-order solutions with conserved quantities}

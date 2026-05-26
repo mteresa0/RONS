@@ -34,9 +34,15 @@
 %%%% define theorems
 \theoremstyle{definition}
 \newtheorem{theorem}{Theorem}
+\newtheorem{defs}{Definition}
 \newtheorem{lemma}{Lemma}
 \newtheorem{rmk}{Remark}
 \newtheorem{assum}{Assumptions}
+
+%%%% write partial deriv
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\pdo}[1]{\frac{\partial}{\partial #1}}
 
 \title{Evolution of nonlinear reduced-order solutions for PDEs with conserved quantities
 \\ \vspace{1em} \large Project Report for NAML}
@@ -62,7 +68,7 @@
 
 \label{section:setup}
 \section{Preliminaries and problem setup}
-% \input{intro}
+\input{ch/setup.tex}
 
 \label{section:methodology}
 \section{Evolution of reduced order model solutions}
