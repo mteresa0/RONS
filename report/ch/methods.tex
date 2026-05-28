@@ -2,18 +2,27 @@
 
 Consider the instantaneous error:
 \begin{equation}
-    \mathcal{J} (\mathbf{q}, \dot{\mathbf{q}}) = \frac{1}{2} ||\hat{u}_t - F(\hat{u})||^2_H
+    \mathcal{J} (\mathbf{q}, \dot{\mathbf{q}}) = \frac{1}{2} \|\hat{u}_t - F(\hat{u})\|^2_H
 \end{equation} 
 
 \begin{lemma}[Metric Tensor]
-    Let Assumptions 1 hold.
-    let sijfoeijwoeirjgwoi
-    fiwojeori.
+    Let \autoref{assum:1} hold. Then, the metric tensor $M$ is defined as
+    \begin{equation}
+        M \in \mathbb{R}^{n\times n} :\hspace{20pt} M_{ij} = \Biggl \langle\pd{\hat{u}}{q_i}, \pd{\hat{u}}{q_j} \Biggr \rangle _H
+        \hspace{20pt} \forall i,j \in \{1, 2, ... , n\}
+    \end{equation}
+    is a symmetric positive-definite matrix for all $\mathbf{q}\in\Omega$.
 \end{lemma}
 % \label{lemma:metric_tensor}
 
 \begin{proof}
-    This is the proof of% \cref{lemma:metric_tensor}
+    From definition it is trivial that the matrix $M$ is symmetric. 
+    To prove that $M$ is positive-definite:
+    \begin{equation}
+        \langle \boldsymbol{\xi}, M \boldsymbol{\xi} \rangle_H = 
+        \biggl \langle \pd{\hat{u}}{q_i}\xi_{i},\pd{\hat{u}}{q_j}\xi_{j} \biggr \rangle_H = 
+        \biggl \| \pd{\hat{u}}{q_i}\xi_{i} \biggr \|_H^2   > 0 
+    \end{equation}
 \end{proof}
 
 \subsection{Evolution of reduced-order solutions with conserved quantities}
