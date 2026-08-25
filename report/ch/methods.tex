@@ -2,10 +2,12 @@
 
 Consider the instantaneous error:
 \begin{equation}
+    \label{eq:J1}
     \mathcal{J} (\mathbf{q}, \dot{\mathbf{q}}) = \frac{1}{2} \|\hat{u}_t - F(\hat{u})\|^2_H
 \end{equation} 
 
 \begin{lemma}[Metric Tensor]
+    \label{lemma:metric_tensor}
     Let \autoref{assum:1} hold. Then, the metric tensor $M$ is defined as
     \begin{equation}
         M \in \mathbb{R}^{n\times n} :\hspace{20pt} M_{ij} = \Biggl \langle\pd{\hat{u}}{q_i}, \pd{\hat{u}}{q_j} \Biggr \rangle _H
@@ -24,5 +26,90 @@ Consider the instantaneous error:
         \biggl \| \pd{\hat{u}}{q_i}\xi_{i} \biggr \|_H^2   > 0 
     \end{equation}
 \end{proof}
+
+\begin{equation}
+    \min_{\dot{\mathbf q} \in \mathbb{R}^n} \mathcal{J}(\mathbf q, \dot{\mathbf q})
+    \label{eq:min_pb1}
+\end{equation}
+
+\begin{theorem}
+    Assuming that \autoref{assum:1} is satisfied, the minimization problem defined in \eqref{eq:min_pb1} admits a unique solution. 
+    Moreover, the optimal parameter evolution is given by:
+    
+    \begin{equation}
+        \dot{\mathbf q}=M^{-1}(\mathbf q),\mathbf f(\mathbf q),
+        \label{eq:parameter_evolution}
+    \end{equation}
+    
+    where $$M(\mathbf q)$$ denotes the metric tensor introduced in \autoref{lemma:metric_tensor}, and $\mathbf f:\mathbb R^n\rightarrow\mathbb R^n$ is defined component-wise as
+    
+    \begin{equation}
+        f_i = \biggl \langle 
+        \frac{\partial \hat u}{\partial q_i},
+        F(\hat u)
+        \biggl \rangle _H,
+        \qquad i=1,\ldots,n.
+    \end{equation}
+    
+\end{theorem}
+    
+\begin{proof}
+    The instantaneous error functional introduced in \eqref{eq:J1} can be expanded as
+
+    \begin{align*}
+        J(\mathbf q,\dot{\mathbf q})
+        &=
+        \frac12 \Big[
+        \langle \hat u_t,\hat u_t\rangle_H
+        -2\langle \hat u_t, F(\hat u)\rangle_H
+        +\langle F(\hat u), F(\hat u)\rangle_H
+        \Big] \\
+        &=
+        \frac12 \dot q_i \dot q_j
+        \left\langle
+        \frac{\partial \hat u}{\partial q_i},
+        \frac{\partial \hat u}{\partial q_j}
+        \right\rangle_H
+        -
+        \dot q_i
+        \left\langle
+        \frac{\partial \hat u}{\partial q_i},
+        F(\hat u)
+        \right\rangle_H
+        +
+        \frac12 \langle F(\hat u), F(\hat u)\rangle_H \\
+        &=
+        \frac12 \left\langle \dot{\mathbf q}, M(\mathbf q)\dot{\mathbf q} \right\rangle
+        -
+        \left\langle \dot{\mathbf q}, \mathbf f(\mathbf q) \right\rangle
+        +
+        \frac12 \langle F(\hat u), F(\hat u)\rangle_H.
+    \end{align*}
+
+    Therefore, $\mathcal J$ is a smooth quadratic function of $\dot{\mathbf q}$. 
+    Since the metric tensor $M(\mathbf q)$ is symmetric and positive definite, the functional is strictly convex with respect to $\dot{\mathbf q}$. 
+    Consequently, the minimization problem possesses a unique solution, characterized by the first-order optimality condition:
+    
+    \begin{equation}
+    \nabla_{\dot{\mathbf q}} J(\mathbf q,\dot{\mathbf q}) = 0.
+    \end{equation}
+    
+    This condition yields
+    
+    \begin{equation}
+    M(\mathbf q)\dot{\mathbf q}-\mathbf f(\mathbf q)=0.
+    \end{equation}
+    
+    Finally, because $M(\mathbf q)$ is invertible, the parameter dynamics can be written as
+    
+    \begin{equation}
+    \dot{\mathbf q}=M^{-1}(\mathbf q)\mathbf f(\mathbf q),
+    \end{equation}
+    
+    which proves the result.
+\end{proof}
+
+
+
 
 \subsection{Evolution of reduced-order solutions with conserved quantities}
